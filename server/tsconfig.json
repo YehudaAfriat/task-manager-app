@@ -7,13 +7,15 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "NodeNext",
-    "target": "esnext",
+    "module": "es2020",
+    "target": "es2020",
     "types": [],
     // For nodejs:
-    // "lib": ["esnext"],
+    "lib": ["es2020"],
     // "types": ["node"],
     // and npm install -D @types/node
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
 
     // Other Outputs
     "sourceMap": true,
@@ -39,8 +41,9 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    // "moduleResolution": "node",
-    // "esModuleInterop": true,
-    "skipLibCheck": true,
-  }
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

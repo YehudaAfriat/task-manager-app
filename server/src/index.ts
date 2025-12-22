@@ -1,17 +1,23 @@
-import express = require("express");
-import dotenv = require("dotenv");
-import cors = require("cors");
+import express from 'express';
+import dotenv from 'dotenv'; // loading env var
+import cors from 'cors';
+import supabase from "./config/supabase.js";
+import authRoutes from "./routes/authRoutes.js";
 
-dotenv.config();
+
+dotenv.config(); // reading from env file
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const supabase = require("./config/supabase");
 
 // Middleware
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
+/* Routes */
+app.use("/api/auth", authRoutes);
+
+/* Testing Routes */
 // Test Supabase connection
 app.get("/test-db", async (req, res) => {
   try {

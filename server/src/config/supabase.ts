@@ -1,6 +1,6 @@
 /* functions and modules */
-const { createClient } = require("@supabase/supabase-js"); // function from official library to connect Supabase. 
-const dotenv = require("dotenv"); // loading env var
+import { createClient } from '@supabase/supabase-js'; // function from official library to connect Supabase. 
+import dotenv from "dotenv" // loading env var
 dotenv.config(); // reading from env file
 
 /* env consts */
@@ -16,4 +16,4 @@ if (!supabaseUrl || !supabaseKey) {
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 /* exprot to use DB */
-module.exports = supabase;
+export default supabase;
