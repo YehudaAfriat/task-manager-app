@@ -1,4 +1,4 @@
-import supabase from "../config/supabase.js";
+import supabase from "../../config/supabase.js";
 import type { Request, Response } from "express";
 
 // Register new user

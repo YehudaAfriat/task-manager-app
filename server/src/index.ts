@@ -1,9 +1,9 @@
-import express from 'express';
-import dotenv from 'dotenv'; // loading env var
-import cors from 'cors';
+import express from "express";
+import dotenv from "dotenv"; // loading env var
+import cors from "cors";
 import supabase from "./config/supabase.js";
-import authRoutes from "./routes/authRoutes.js";
-
+import authRoutes from "./routes/authRoutes/authRoutes.js";
+import tasksRoutes from "./routes/tasksRoutes/tasksRoutes.js"
 
 dotenv.config(); // reading from env file
 
@@ -16,6 +16,7 @@ app.use(express.json());
 
 /* Routes */
 app.use("/api/auth", authRoutes);
+app.use("/api/tasks", tasksRoutes)
 
 /* Testing Routes */
 // Test Supabase connection

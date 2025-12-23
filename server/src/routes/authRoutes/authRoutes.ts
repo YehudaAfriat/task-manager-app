@@ -1,6 +1,6 @@
 import express from "express";
-import * as authController from "../controllers/authController.js"
-import authMiddleware from "../middleware/authMiddleware.js"
+import * as authController from "../../controllers/authController/authController.js";
+import authMiddleware from "../../middleware/authMiddleware.js";
 
 const router = express.Router();
 
@@ -10,6 +10,6 @@ router.post("/login", authController.login);
 
 // Protected routes (authentication required)
 router.post("/logout", authMiddleware, authController.logout);
-router.get("/me", authMiddleware, authController.getMe)
+router.get("/me", authMiddleware, authController.getMe);
 
 export default router;
